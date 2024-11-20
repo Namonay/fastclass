@@ -15,6 +15,10 @@ ${NAME}:
 	@${CC} ${FLAGS} ${SRCS} -o ${NAME}; \
 	printf "\e[1;32m[build successfull]\e[1;00m\n"
 
+auto-name :
+	@${CC} ${FLAGS} ${SRCS} -D USER=\"$(USER)\" -o ${NAME}; \
+	printf "\e[1;32m[build successfull]\e[1;00m\n"
+
 install : 
 	@read -p "Enter your username, it will appear on your 42Header as (USERNAME@EMAIL) : " class_username; \
 	read -p "Enter your email, it will appear on your 42Header as (USERNAME@EMAIL): " class_email; \

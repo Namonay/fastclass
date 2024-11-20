@@ -5,6 +5,7 @@ A C program destined to make C++ classes faster following the orthodox canonical
 
 ## How to install
 
+### Standalone
 First clone the repository:
 ```bash
 git clone https://github.com/Namonay/fastclass.git
@@ -24,6 +25,16 @@ If you want to install to a custom path, you can input it as a make parameter:
 ```bash
 # This is the default path
 make install INSTALL_PATH="$HOME/.local/bin"
+```
+### Nix way
+
+Add the input into the your flake
+```nix
+fastclass.url = "github:seekrs/fastclass";
+```
+And add the package into
+```nix
+inputs.fastclass.packages.${pkgs.system}.fastclass
 ```
 
 ## How to use
